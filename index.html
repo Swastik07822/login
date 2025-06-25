@@ -9,9 +9,9 @@
 
   <script>
     function redirectToCognito() {
-      const clientId = '5d76sbs0jh9b9lsmfok0coifku';
-      const domain = 'eu-north-17prph0zjm.auth.eu-north-1.amazoncognito.com';
-      const redirectUri = encodeURIComponent('https://swastik07822.github.io/MyPortfolio/');
+      const clientId = '';
+      const domain = '';
+      const redirectUri = encodeURIComponent('');
 
       const loginUrl = `https://${domain}/login?client_id=${clientId}&response_type=code&scope=openid+email+phone&redirect_uri=${redirectUri}`;
       console.log("Redirecting to:", loginUrl);
