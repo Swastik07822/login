@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Login with Cognito</title>
 </head>
 <body>
   <h2>Welcome</h2>
   <p>Click the button below to login with Cognito:</p>
-  <a href="https://your-domain.auth.eu-north-1.amazoncognito.com/login?client_id=3625spa1mf2lveb0j425qjejn6&response_type=code&scope=openid+email+phone&redirect_uri=http://localhost:5000/authorize">
-    <button>Login with Cognito</button>
-  </a>
+  <button onclick="redirectToCognito()">Login with Cognito</button>
+
+  <script>
+    function redirectToCognito() {
+      const clientId = '3625spa1mf2lveb0j425qjejn6'; // ✅ Your Cognito App Client ID
+      const domain = 'your-domain.auth.eu-north-1.amazoncognito.com'; // ✅ Your Cognito domain
+      const redirectUri = encodeURIComponent('https://yourwebpage.com/after-login'); // ✅ Your webpage after login
+      const responseType = 'code';
+      const scope = 'openid+email+phone';
+
+      const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=${scope}&redirect_uri=${redirectUri}`;
+
+      window.location.href = cognitoUrl;
+    }
+  </script>
 </body>
 </html>
+
