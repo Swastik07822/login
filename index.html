@@ -14,7 +14,7 @@
       const domain = 'eu-north-17prph0zjm.auth.eu-north-1.amazoncognito.com'; // ✅ Your actual Cognito domain
       const redirectUri = encodeURIComponent('https://swastik07822.github.io/MyPortfolio/'); // ✅ This GitHub Pages URL must be in callback list
 
-      const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=code&scope=openid+email+phone&redirect_uri=${redirectUri}`;
+      const cognitoUrl = `${domain}/login?client_id=${clientId}&response_type=code&scope=openid+email+phone&redirect_uri=${redirectUri}`;
       window.location.href = cognitoUrl;
     }
   </script>
