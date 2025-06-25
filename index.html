@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login with Cognito Hi</title>
+  <title>Login</title>
 </head>
 <body>
-  <h2>Welcome</h2>
-  <p>Click the button below to login with Cognito:</p>
-  <button onclick="redirectToCognito()">Login with Cognito</button>
+  <h2>Login with AWS Cognito</h2>
+  <button onclick="redirectToCognito()">Login</button>
 
   <script>
     function redirectToCognito() {
-      const clientId = '3625spa1mf2lveb0j425qjejn6'; // ✅ Your Cognito App Client ID
-      const domain = 'https://eu-north-1qnj60epbs.auth.eu-north-1.amazoncognito.com'; // ✅ Your Cognito domain
-      const redirectUri = encodeURIComponent('https://swastik07822.github.io/MyPortfolio/?code=b6806085-6005-448d-b530-078e90fc666a'); // ✅ Your webpage after login
-      const responseType = 'code';
-      const scope = 'openid+email+phone';
+      const clientId = '5d76sbs0jh9b9lsmfok0coifku';  // ✅ Your actual client ID
+      const domain = 'https://eu-north-17prph0zjm.auth.eu-north-1.amazoncognito.com'; // ✅ Your actual Cognito domain
+      const redirectUri = encodeURIComponent('https://swastik07822.github.io/MyPortfolio/'); // ✅ This GitHub Pages URL must be in callback list
 
-      const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=${scope}&redirect_uri=${redirectUri}`;
-
+      const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=code&scope=openid+email+phone&redirect_uri=${redirectUri}`;
       window.location.href = cognitoUrl;
     }
   </script>
 </body>
 </html>
-
